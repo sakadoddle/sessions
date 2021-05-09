@@ -44,3 +44,28 @@ require                                         // Use for importing packages or
 process                                         // Get current node process data 
 
 
+// Major loop concept
+
+let arr = [1, 2, 'string text']
+
+// .foreach
+arr.foreach((ele) => {                          // Used for basic loop array and doesn't return value
+    console.log(ele)
+})
+
+// .map
+arr.map((ele) => {                              // Used for to edit array and get return value of new array
+
+    if (ele === 2) {
+        return 'Change value';
+    }
+
+    return ele;
+})
+
+
+//.filter  
+arr.filter((ele) => {                           // Used to filter array
+
+    if (ele !== 2) return ele
+})
