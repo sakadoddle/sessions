@@ -49,6 +49,9 @@ Uninstall packages:
         --save means to delete package name in package.json
         -g means uninstall the packages in global level
 
+Install packages (Already existed in package.json)
+    npm install
+
 Note:
     package.json: Store all the version of packages and scripts to run the application
     package-lock.json: STore all nested packages dependency
