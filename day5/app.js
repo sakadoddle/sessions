@@ -8,7 +8,7 @@ const path = require('path');
 
 
 
-app.use(express.static('navbar'))
+app.use(express.static(__dirname + '/navbar'))
 
 
 
