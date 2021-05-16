@@ -8,7 +8,7 @@ const path = require('path');
 
 
 
-app.use(express.static(__dirname + '/navbar'))
+app.use('/public', express.static(__dirname + '/navbar'))
 
 
 
@@ -28,6 +28,7 @@ app.get('/', looger, (req, res) => {
 })
 
 app.get('/profile', looger, permission, (req, res) => {
+    console.log(path.resolve(__dirname, './navbar/index.html'))
     res.sendFile(path.resolve(__dirname, './navbar/index.html'))
 })
 
