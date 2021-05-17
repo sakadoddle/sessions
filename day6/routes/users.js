@@ -13,7 +13,19 @@ router.get('/nested', function (req, res, next) {
 
 router.get('/nested/:dyanmic', function (req, res, next) {
   const parmas = req.params.dyanmic;
-  res.render('user', { dynamic: 'Simple text' });
+  res.render('user', {
+    dynamic: 'Simple text',
+    showtext: false,
+    data: [{
+      title: 'Bitcoin',
+      desc: 'Crypto'
+    }, {
+      title: 'Apple',
+      desc: 'Tech'
+    }]
+  });
 });
 
 module.exports = router;
+
+
