@@ -1,0 +1,21 @@
+<div>
+    <table border="1">
+        <tr style="padding: 5px;">
+            <th>Id</th>
+            <th>name</th>
+            <th>address</th>
+            <th>Phone no</th>
+            <th>Email</th>
+        </tr>
+        {{#each users}}
+        <tr>
+            <td>{{this._id}}</td>
+            <td> {{this.name}} </td>
+            <td>{{this.address}}</td>
+            <td>{{this.phone}}</td>
+            <td>{{this.email}}</td>
+        </tr>
+        {{/each}}
+
+    </table>
+</div>
