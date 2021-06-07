@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">description</th>
+            <th scope="col">position</th>
+            <th scope="col">link</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each articleList}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.desc}}</td>
+            <td>{{this.position}}</td>
+            <td>{{this.link}}</td>
+            <td>
+                <button type="button" class="btn btn-primary"><a href="/article/edit/{{this._id}}">Edit</a></button>
+                <button type="button" class="btn btn-danger">
+                    <a href="/article/delete/{{this._id}}">Delete</a>
+                </button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

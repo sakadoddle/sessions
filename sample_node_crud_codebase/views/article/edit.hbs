@@ -1,0 +1,26 @@
+<form method="POST" action="/article/editAction">
+    <input type="hidden" name="id" value="{{article.id}}" />
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="name" value="{{article.name}}" class="form-control" iaria-describedby="name">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" name="description" value="{{article.desc}}" class="form-control"
+            iaria-describedby="description">
+    </div>
+
+    <div class="mb-3">
+        <label for="link" class="form-label">Link</label>
+        <input type="text" name="link" value="{{article.link}}" class="form-control" iaria-describedby="link">
+    </div>
+
+
+    <div class="mb-3">
+        <label for="position" class="form-label">Position</label>
+        <input type="number" name="position" value="{{article.position}}" class="form-control"
+            iaria-describedby="position">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
