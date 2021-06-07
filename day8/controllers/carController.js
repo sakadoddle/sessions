@@ -10,7 +10,7 @@ module.exports = {
     /**
      * carController.list()
      */
-    list: function (req, res) {
+    list: function (req, res, next) {
         console.log('car list')
         // return false;
         CarModel.find(function (err, cars) {
@@ -21,10 +21,13 @@ module.exports = {
                 });
             }
 
+            console.log(cars)
+
             // return res.json({
             //     name: 'blha'
             // })
-            return res.json(cars);
+            // return res.render('index', { title: 'asdasd', cars: cars });
+            // return res.json(cars)
         });
     },
 

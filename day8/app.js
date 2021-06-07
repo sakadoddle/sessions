@@ -6,6 +6,9 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 
 
+// const fileUpload = require('express-fileupload');
+// var passport = require('passport');
+// var LocalStrategy = require('passport-local').Strategy;
 
 mongoose.connect('mongodb://localhost:27017/session', { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -23,6 +26,8 @@ var carRouter = require('./routes/carRoutes');
 
 var app = express();
 
+// app.use(fileUpload());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -33,7 +38,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+// var User = require('./models/User');
+// passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
+
+app.use('/firstPath', indexRouter);
+
 app.use('/users', usersRouter);
 app.use('/car', carRouter);
 
