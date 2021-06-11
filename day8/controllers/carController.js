@@ -1,5 +1,7 @@
 var CarModel = require('../models/carModel.js');
 
+
+const mystring = 'rikee';
 /**
  * carController.js
  *

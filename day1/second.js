@@ -1,15 +1,11 @@
-const hello = (name) => {
-    console.log(`Say hello to ${name}`)
+
+
+module.exports = {
+    list: 'myname',
+    addAction: 'asdasd',
+    edit: function
 }
 
-const world = (name) => {
-    console.log(`World`)
-}
-
-
-const myString = 'MY string';
-
-module.exports = { hello, world, myString }
 
 
 // Or you can individual export 
