@@ -4,6 +4,7 @@ import './index.css';
 // import App from './App';
 import Math from './Math';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
     <Math />,
