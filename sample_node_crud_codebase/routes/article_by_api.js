@@ -27,4 +27,7 @@ router.put('/:id', articleControllerByApi.update);
  */
 router.delete('/:id', articleControllerByApi.remove);
 
+
+router.post('/upload', articleControllerByApi.upload)
+
 module.exports = router;

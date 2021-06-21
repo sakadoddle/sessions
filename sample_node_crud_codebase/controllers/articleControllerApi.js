@@ -126,5 +126,26 @@ module.exports = {
 
             return res.status(204).json();
         });
+    },
+
+
+    upload: function (req, res) {
+        // req.body
+        const files = req.files.images;
+
+        const getFilename = new Date().getTime();
+
+
+
+        files.mv(`${__dirname}/${getFilename}.jpg`, function (err, msg) {
+            console.log('Error', err)
+            console.log('Msg', msg)
+
+            return res.json({
+                message: 'UPlaoded files'
+            })
+        })
     }
 };
+
+

@@ -8,7 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let articleByTemplate = require('./routes/article_by_template');
 let articleByApi = require('./routes/article_by_api');
+let customer = require('./routes/customerList')
 const mongoose = require('mongoose');
+
+const fileUpload = require('express-fileupload');
 
 var app = express();
 
@@ -25,6 +28,9 @@ mongoose.connect('mongodb://localhost:27017/article', { useNewUrlParser: true, u
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
+app.use(fileUpload());
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -40,6 +46,9 @@ app.use('/article', articleByTemplate);
 
 // Route used for Article Api will be used mainly for react app
 app.use('/api/article', articleByApi);
+
+
+app.use('/customer', customer)
 
 
 // catch 404 and forward to error handler

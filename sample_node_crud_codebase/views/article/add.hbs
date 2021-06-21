@@ -1,4 +1,4 @@
-<form method="POST" action="/article/addAction">
+<form method="POST" action="/article/addAction" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" name="name" class="form-control" iaria-describedby="name">
@@ -19,5 +19,10 @@
         <input type="number" name="position" class="form-control" iaria-describedby="position">
     </div>
 
+
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="file" name="image" class="form-control" iaria-describedby="image">
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

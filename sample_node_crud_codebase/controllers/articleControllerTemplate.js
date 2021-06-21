@@ -65,6 +65,8 @@ module.exports = {
      * articleController.create()
      */
     create: function (req, res) {
+        const files = req.files.image;
+        const getFilename = new Date().getTime();
 
         var article = new ArticleModel({
             name: req.body.name,
@@ -82,8 +84,13 @@ module.exports = {
                 });
             }
 
+            files.mv(`${__dirname}/${getFilename}.jpg`, function (err, msg) {
+                console.log('Error', err)
+                console.log('Msg', msg)
 
-            return res.redirect('/article')
+                return res.redirect('/article')
+            })
+
         })
     },
 
@@ -92,6 +99,7 @@ module.exports = {
      */
     update: function (req, res) {
         var id = req.body.id;
+
 
         ArticleModel.findOne({ _id: id }, function (err, article) {
             if (err) {
@@ -111,6 +119,9 @@ module.exports = {
             article.desc = req.body.description ? req.body.description : article.desc;
             article.position = req.body.position ? req.body.position : article.position;
             article.link = req.body.link ? req.body.link : article.link;
+
+
+            console.log(article)
 
             article.save(function (err, article) {
                 if (err) {
