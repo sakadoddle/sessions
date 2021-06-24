@@ -1,7 +1,7 @@
-const looger = (req, res, cb) => {
+const looger = (req, res, next) => {
 
     console.log('====> ', req.url)
-    cb();
+    next();
 }
 
 module.exports = looger

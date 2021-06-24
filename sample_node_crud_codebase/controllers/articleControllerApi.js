@@ -51,6 +51,11 @@ module.exports = {
      * articleController.create()
      */
     create: function (req, res) {
+
+	console.log(req.body);
+	
+	res.json({'data': 'asdasd'})
+return false;
         var article = new ArticleModel({
             name: req.body.name,
             desc: req.body.desc,

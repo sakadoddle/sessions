@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var articleControllerByTemplate = require('../controllers/articleControllerTemplate');
+const ensureLoggedIn = require('./middleware');
 
 
-router.get('/', articleControllerByTemplate.list);
+router.get('/', ensureLoggedIn('/customer/login'), articleControllerByTemplate.list);
 
 
 router.get('/add', articleControllerByTemplate.addForm);
